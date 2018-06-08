@@ -24,7 +24,7 @@ This script will deploy a multi_az RDS instance within a VPC.
 # Install
 ```
 git clone git@github.com:awshonolulu/rds-deep-dive.git
-cd alb-deep-dive.git
+cd rds-deep-dive.git
 terraform init
 ```
 

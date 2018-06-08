@@ -1,7 +1,7 @@
 module "db" {
   source = "terraform-aws-modules/rds/aws"
 
-  identifier = "${var.mysql_dbname}"
+  identifier = "${var.service}-${var.service_instance}-${var.mysql_dbname}"
 
   engine            = "mysql"
   engine_version    = "5.7.19"
@@ -24,7 +24,7 @@ module "db" {
   # by yourself, in case you don't want to create it automatically
   monitoring_interval = "30"
 
-  monitoring_role_name   = "MyRDSMonitoringRole"
+  monitoring_role_name   = "${var.service_instance}-MyRDSMonitoringRole"
   create_monitoring_role = true
   publicly_accessible    = true
   multi_az               = true
